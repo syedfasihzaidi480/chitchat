@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Send Message</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="admin-container">
+    <header>
+      <h1>Admin - Send Message</h1>
+    </header>
+    <main>
+      <form id="message-form">
+        <div class="form-group">
+          <textarea id="message-input" placeholder="Type your message here..." required></textarea>
+        </div>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+      </form>
+      <div id="response" class="response-message"></div>
+    </main>
+  </div>
+  <script>
+    document.getElementById('message-form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      const message = document.getElementById('message-input').value;
+
+      const response = await fetch('/send-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message })
+      });
+
+      const responseData = await response.json();
+      document.getElementById('response').innerText = responseData.status || responseData.error;
+      document.getElementById('message-input').value = ''; // Clear the input field
+    });
+  </script>
+</body>
+</html>

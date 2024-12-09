@@ -1,0 +1,248 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e5ddd5;
+}
+
+#chat-container {
+  width: 100%;
+  max-width: 800px;
+  height: 90vh;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+header {
+  background-color: #075e54; /* Teal color */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.header-left {
+  flex-grow: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+#user-name,
+#group-name,
+#status-input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  outline: none;
+}
+
+#set-name-button,
+#join-group-button,
+#set-status-button {
+  background-color: white;
+  color: #075e54;
+  border: 1px solid #075e54;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#set-name-button:hover,
+#join-group-button:hover,
+#set-status-button:hover {
+  background-color: #128c7e;
+  color: white;
+}
+
+#set-name-button:focus,
+#join-group-button:focus,
+#set-status-button:focus {
+  outline: none;
+}
+
+#status-container {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-top: 1px solid #ddd;
+  max-height: 30%;
+  overflow-y: auto;
+}
+
+#status-container h2 {
+  margin-top: 0;
+}
+
+#status-list {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#status-form {
+  display: flex;
+  align-items: center;
+}
+
+#status-form input {
+  flex-grow: 1;
+}
+
+#chat-window {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #e5ddd5;
+}
+
+#chat-window .message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #dcf8c6;
+  word-wrap: break-word;
+  align-self: flex-start;
+  position: relative;
+}
+
+#chat-window .message.sent {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+}
+
+#chat-window .message.received {
+  background-color: #ffffff;
+  align-self: flex-start;
+}
+
+#chat-window .message img, 
+#chat-window .message video, 
+#chat-window .message audio, 
+#chat-window .message a {
+  max-width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+
+.message .timestamp {
+  font-size: 0.8em;
+  color: #999;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+.message .actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.message .actions button {
+  background: none;
+  border: none;
+  color: #075e54;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.message .actions button:hover {
+  color: #128c7e;
+}
+
+footer {
+  display: flex;
+  border-top: 1px solid #ddd;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+#message-form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+#recipient-id,
+#message-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 10px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+#recipient-id::placeholder,
+#message-input::placeholder {
+  color: #888;
+}
+
+#file-input {
+  display: none;
+}
+
+.file-label {
+  background-color: white;
+  color: #075e54;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 10px;
+  border: 1px solid #075e54;
+}
+
+.file-label:hover {
+  background-color: #128c7e;
+  color: white;
+}
+
+button {
+  background-color: #075e54;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #128c7e;
+}
+
+button:focus {
+  outline: none;
+}
+
+#record-button {
+  background-color: #075e54;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#record-button.recording {
+  background-color: #ff0000;
+}
